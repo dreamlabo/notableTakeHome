@@ -5,11 +5,10 @@ mongoose.Promise = global.Promise;
 
 const appointmentSchema = new Schema(
     {
-        date: {type: 
-            Date, 
-            trim: true, 
-            required: true
-        },
+        date: {type: Date, 
+                trim: true, 
+                required: true
+            },
         withDoctor: {type: String, 
                     trim: true, 
                     required: true

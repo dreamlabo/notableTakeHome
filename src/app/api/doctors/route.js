@@ -5,6 +5,7 @@ import Doctor from "@/models/doctor"
 // Create a doctor
 export async function POST(req) {
     const requestData = await req.json();
+    
 
     try {
         const data = {
@@ -29,7 +30,7 @@ export async function POST(req) {
 // Get a list of all doctors
 export async function GET(req) {
     try {
-        const allDoctors = await Doctor.find()
+        const allDoctors = await Doctor.find().sort({firstName: 'asc'})
         return NextResponse.json({
             doctors: allDoctors}, 
             { status: 200})

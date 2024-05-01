@@ -19,10 +19,13 @@ export async function GET(req) {
                 $lt: nextDay
             },
             withDoctor: doctorId
+        }).sort({
+            date: 'asc'
         });
 
-        if(appointmentsByDoctorOnGivenDate.length === 0) {
-            return NextResponse.json({message: "No appointments found with given data"}, { status: 200})
+        if(appointmentsByDoctorOnGivenDate.length === 0 || !appointmentsByDoctorOnGivenDate) {
+            return NextResponse.json({message: "No appointments found with given data",
+                                    appointments: []}, { status: 200})
         }
         return NextResponse.json({appointments: appointmentsByDoctorOnGivenDate}, { status: 200})
 

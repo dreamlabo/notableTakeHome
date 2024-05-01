@@ -1,7 +1,7 @@
-import { Roboto } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({
+const dm_sans = DM_Sans({
   weight: ['100', '300', '400', '500', '700', '900'],
   subsets: ['latin'],
   display: 'swap',
@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <body className={dm_sans.className}>{children}</body>
     </html>
   );
 }
