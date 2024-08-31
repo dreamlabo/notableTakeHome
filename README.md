@@ -2,6 +2,7 @@
 Technologies Used:
 - Next.js
 - JavaScript
+- MongoDB
 - HTML
 - CSS
 - Postman
